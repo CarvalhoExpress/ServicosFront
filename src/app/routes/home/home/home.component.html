@@ -1,0 +1,83 @@
+<div class="container">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-xl-3 col-lg-4">
+                <div class="text-center">
+                    <img alt="Angular" class="img-fluid home-logo" src="assets/img/angular.png" />
+                </div>
+            </div>
+            <div class="col-xl-9 col-lg-8 home-text">
+                <h1 class="home-text-big">Quem somos?</h1>
+                <p>A Carvalho Express, e a caçula do Grupo Carvalho,a empresa iniciou em 2016, para atender clientes
+                    internos da Carvalho Assessoria Empresarial, que em todo momento precisava de agente de cargas para
+                    coleta, entrega, ou envio de documentos e produtos de pequeno porte, que precisariam ir para outra
+                    cidade, dessa forma encontramos na Carvalho Expressa a chance de agregar mais este serviço ao nossos
+                    clientes, hoje atendemos mais de 10 empresa de forma fixa e por demanda de envio.
+                    <br> <small>Venha conhecer nossa plataforma.</small>
+                </p>
+                <p><button class="btn btn-primary btn-lg float-left" target="_blank"
+                        (click)="IrParaConhecaMais()">Conheça mais..</button></p>
+                <p><button class="btn btn-primary btn-lg float-right" target="_blank"
+                        (click)="IrParaCadastroDePrestador()">Seja um prestador de Serviço!</button></p>
+            </div>
+        </div>
+    </div>
+    <div class="container container-md">
+        <form [formGroup]="buscaForm" (submit)="submitForm($event, buscaForm.value)">
+            <div class="input-group input-group-lg">
+                <input class="form-control form-control-lg rounded-0" type="text" name="term" placeholder="Buscar" />
+                <select class="form-control form-control-lg" formControlName="busca" [formControl]="buscaForm.controls['busca']">
+                    <option value='a'>Todos os Serviços</option>
+                    <option value='Eletricista'>Eletricista</option>
+                    <option value='Frete'>Frete</option>
+                    <option value='Chaveiro'>Chaveiro</option>
+                    <option value='Técnico em Informática'>Técnico em Informática</option>
+                    <option value='Designer'>Designer</option>
+                    <option value='Projetista'>Projetista</option>
+                    <option value='Programador'>Programador</option>
+                </select>
+                <div class="input-group-append">
+                    <button class="btn btn-info btn-lg b0 rounded-0" type="submit">
+                        <strong>Buscar</strong>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <hr>
+    <!-- Main cards-->
+
+    <div class="row">
+        <div class="col-xl-4 col-lg-6" *ngFor="let p of cadastros;">
+            <div class="card b text-center">
+                <div class="card-body">
+                    <img class="rounded-circle thumb64 mb-2" src={{p.urlImage}} />
+                    <p class="h4 text-bold mb-0">{{p.nome +' '+ p.sobrenome}}</p>
+                    <p>{{p.servico}}</p>
+                    <p>{{p.email}}</p>
+                    <p>{{p.telefone}}</p>
+                    <button class="btn btn-success btn-oval float-left" type="button">Mensagem</button>
+                    <button class="btn btn-info btn-oval float-right" type="button">Ligar</button>
+                </div>
+                <div class="card-body bt">
+                    <div class="row">
+                        <div class="col-4 br">
+                            <em class="fab fa-facebook-f fa-fw text-primary"></em>
+                            <strong>+700</strong>
+                        </div>
+                        <div class="col-4 br">
+                            <em class="fab fa-twitter fa-fw text-info"></em>
+                            <strong>+300</strong>
+                        </div>
+                        <div class="col-4">
+                            <em class="fa fa-heart fa-fw text-danger"></em>
+                            <strong>+150</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end Main cards-->
+</div>

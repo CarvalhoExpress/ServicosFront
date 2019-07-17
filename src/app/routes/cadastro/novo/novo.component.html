@@ -1,0 +1,144 @@
+<div class="content-heading">
+    <div>Cadastro
+        <small>Solcitação de Cadastro de Prestador de Serviço</small>
+    </div>
+</div>
+
+<!-- START row-->
+<div class="row justify-content-md-center">
+    <div class="col-lg-6 col-sm-10">
+        <!-- START card-->
+        <div class="card card-default">
+            <div class="card-header d-flex align-items-center">
+                <div class="d-flex justify-content-center col">
+                    <div class="h4 m-0 text-center">Solicitar Cadastro</div>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <div class="btn-group" dropdown>
+                        <button class="btn btn-link" dropdownToggle>
+                            <em class="fa fa-ellipsis-v fa-lg text-muted"></em>
+                        </button>
+                        <ul *dropdownMenu class="dropdown-menu dropdown-menu-right-forced animated fadeInLeft"
+                            role="menu">
+                            <a class="dropdown-item" href="#">
+                                <span>Send by message</span>
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <span>Share contact</span>
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <span>Block contact</span>
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <span class="text-warning">Delete contact</span>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row py-4 justify-content-center">
+                    <div class="col-12 col-sm-10">
+                        <form [formGroup]="cadastroForm" class="form-validate form-horizontal"
+                            (submit)="submitForm($event, cadastroForm.value)" novalidate="">
+                            <div class="form-group row">
+                                <label class="text-bold col-xl-2 col-md-3 col-4 col-form-label text-right"
+                                    for="Nome">Nome</label>
+                                <div class="col-xl-10 col-md-9 col-8">
+                                    <input class="form-control" type="text" formControlName="Nome"
+                                        [formControl]="cadastroForm.controls['Nome']" placeholder="Nome" />
+                                    <span class="text-danger"
+                                        *ngIf="cadastroForm.controls['Nome'].hasError('required') && (cadastroForm.controls['Nome'].dirty || cadastroForm.controls['Nome'].touched)">Campo
+                                        Obrigatório</span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="text-bold col-xl-2 col-md-3 col-4 col-form-label text-right"
+                                    for="Sobrenome">Sobrenome</label>
+                                <div class="col-xl-10 col-md-9 col-8">
+                                    <input class="form-control" type="text" formControlName="Sobrenome"
+                                        [formControl]="cadastroForm.controls['Sobrenome']" placeholder="Sobrenome" />
+                                    <span class="text-danger"
+                                        *ngIf="cadastroForm.controls['Sobrenome'].hasError('required') && (cadastroForm.controls['Sobrenome'].dirty || cadastroForm.controls['Sobrenome'].touched)">Campo
+                                        Obrigatório</span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="text-bold col-xl-2 col-md-3 col-4 col-form-label text-right"
+                                    for="Telefone">Telefone</label>
+                                <div class="col-xl-10 col-md-9 col-8">
+                                    <input class="form-control" type="text" formControlName="Telefone"
+                                        [formControl]="cadastroForm.controls['Telefone']" placeholder="Telefone" />
+                                    <span class="text-danger"
+                                        *ngIf="cadastroForm.controls['Telefone'].hasError('required') && (cadastroForm.controls['Telefone'].dirty || cadastroForm.controls['Telefone'].touched)">Campo
+                                        Obrigatório</span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="text-bold col-xl-2 col-md-3 col-4 col-form-label text-right"
+                                    for="Email">Email</label>
+                                <div class="col-xl-10 col-md-9 col-8">
+                                    <input class="form-control" type="email" formControlName="Email"
+                                        [formControl]="cadastroForm.controls['Email']" placeholder="Email" />
+                                    <span class="text-danger"
+                                        *ngIf="cadastroForm.controls['Email'].hasError('required') && (cadastroForm.controls['Email'].dirty || cadastroForm.controls['Email'].touched)">Campo
+                                        Obrigatório</span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="text-bold col-xl-2 col-md-3 col-4 col-form-label text-right"
+                                    for="Cidade">Cidade</label>
+                                <div class="col-xl-10 col-md-9 col-8">
+                                    <input class="form-control" type="text" formControlName="Cidade"
+                                        [formControl]="cadastroForm.controls['Cidade']" placeholder="Cidade" />
+                                    <span class="text-danger"
+                                        *ngIf="cadastroForm.controls['Cidade'].hasError('required') && (cadastroForm.controls['Cidade'].dirty || cadastroForm.controls['Cidade'].touched)">Campo
+                                        Obrigatório</span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="text-bold col-xl-2 col-md-3 col-4 col-form-label text-right"
+                                    for="Servico">Área de Atuação</label>
+                                <div class="col-xl-10 col-md-9 col-8">
+                                    <select class="form-control form-control-lg" formControlName="Servico" [formControl]="cadastroForm.controls['Servico']">
+                                        <option value='1'>Eletricista</option>
+                                        <option value='2'>Frete</option>
+                                        <option value='3'>Chaveiro</option>
+                                        <option value='4'>Técnico em Informática</option>
+                                        <option value='5'>Designer</option>
+                                        <option value='6'>Projetista</option>
+                                        <option value='7'>Programador</option>
+                                    </select>
+                                    <span class="text-danger"
+                                        *ngIf="cadastroForm.controls['Servico'].hasError('required') && (cadastroForm.controls['Servico'].dirty || cadastroForm.controls['Servico'].touched)">Campo
+                                        Obrigatório</span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-xl-2 col-md-3 col-4"></div>
+                                <div class="col-xl-10 col-md-9 col-8">
+                                    <div class="custom-control custom-checkbox">
+                                        <input class="custom-control-input" type="checkbox" formControlName="Check"
+                                            [formControl]="cadastroForm.controls['Check']" required="" />
+                                        <label class="custom-control-label" for="Check">Concordo com termo e
+                                            condições.</label>
+                                        <span class="text-danger"
+                                            *ngIf="cadastroForm.controls['Check'].hasError('required') && (cadastroForm.controls['Check'].dirty || cadastroForm.controls['Check'].touched)">Aceite
+                                            os termos de uso.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-10">
+                                    <button class="btn btn-info" type="submit">Enviar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END card-->
+    </div>
+</div>
+<!-- END row-->

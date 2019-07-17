@@ -1,0 +1,158 @@
+<div class="content-heading">
+    <div>Cadastro
+        <small>Finalização de Cadastro do Motorista</small>
+    </div>
+</div>
+
+<div class="card card-default">
+    <div class="card-header">Dados Cadastrais</div>
+    <div class="card-body">
+        <form [formGroup]="cadastroForm" class="form-validate form-horizontal"
+            (submit)="submitForm($event, cadastroForm.value)" enctype="multipart/form-data">
+            <fieldset>
+                <div class="col-md-12">
+                    <div class="form-row">
+                        <div class="col-lg-3 mb-3">
+                            <label>Nome</label>
+                            <input class="form-control" type="text" formControlName="Nome"
+                                [formControl]="cadastroForm.controls['Nome']" placeholder="Nome" />
+                            <span class="text-danger"
+                                *ngIf="cadastroForm.controls['Nome'].hasError('required') && (cadastroForm.controls['Nome'].dirty || cadastroForm.controls['Nome'].touched)">Campo
+                                Obrigatório</span>
+                        </div>
+                        <div class="col-lg-3 mb-3">
+                            <label>Sobrenome</label>
+                            <input class="form-control" type="text" formControlName="Sobrenome"
+                                [formControl]="cadastroForm.controls['Sobrenome']" placeholder="Sobrenome" />
+                            <span class="text-danger"
+                                *ngIf="cadastroForm.controls['Sobrenome'].hasError('required') && (cadastroForm.controls['Sobrenome'].dirty || cadastroForm.controls['Sobrenome'].touched)">Campo
+                                Obrigatório</span>
+                        </div>
+                        <div class="col-lg-3 mb-3">
+                            <label>Email</label>
+                            <input class="form-control" type="text" formControlName="Email"
+                                [formControl]="cadastroForm.controls['Email']" placeholder="Email" />
+                            <span class="text-danger"
+                                *ngIf="cadastroForm.controls['Email'].hasError('required') && (cadastroForm.controls['Email'].dirty || cadastroForm.controls['Email'].touched)">Campo
+                                Obrigatório</span>
+                        </div>
+                        <div class="col-lg-3 mb-3">
+                            <label>Telefone</label>
+                            <input class="form-control" type="text" formControlName="Telefone"
+                                [formControl]="cadastroForm.controls['Telefone']" placeholder="Telefone" />
+                            <span class="text-danger"
+                                *ngIf="cadastroForm.controls['Telefone'].hasError('required') && (cadastroForm.controls['Telefone'].dirty || cadastroForm.controls['Telefone'].touched)">Campo
+                                Obrigatório</span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-lg-3 mb-3">
+                            <label>CEP</label>
+                            <input class="form-control" type="text" formControlName="Cep"
+                                [formControl]="cadastroForm.controls['Cep']" placeholder="CEP" />
+                            <span class="text-danger"
+                                *ngIf="cadastroForm.controls['Cep'].hasError('required') && (cadastroForm.controls['Cep'].dirty || cadastroForm.controls['Cep'].touched)">Campo
+                                Obrigatório</span>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <label>Rua</label>
+                            <input class="form-control" type="text" formControlName="Rua"
+                                [formControl]="cadastroForm.controls['Rua']" placeholder="Rua" />
+                            <span class="text-danger"
+                                *ngIf="cadastroForm.controls['Rua'].hasError('required') && (cadastroForm.controls['Rua'].dirty || cadastroForm.controls['Rua'].touched)">Campo
+                                Obrigatório</span>
+                        </div>
+                        <div class="col-lg-3 mb-3">
+                            <label>Número</label>
+                            <input class="form-control" type="text" formControlName="Numero"
+                                [formControl]="cadastroForm.controls['Numero']" placeholder="Numero" />
+                            <span class="text-danger"
+                                *ngIf="cadastroForm.controls['Numero'].hasError('required') && (cadastroForm.controls['Numero'].dirty || cadastroForm.controls['Numero'].touched)">Campo
+                                Obrigatório</span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-lg-6 mb-3">
+                            <label>Bairro</label>
+                            <input class="form-control" type="text" formControlName="Bairro"
+                                [formControl]="cadastroForm.controls['Bairro']" placeholder="Bairro" />
+                            <span class="text-danger"
+                                *ngIf="cadastroForm.controls['Bairro'].hasError('required') && (cadastroForm.controls['Bairro'].dirty || cadastroForm.controls['Bairro'].touched)">Campo
+                                Obrigatório</span>
+                        </div>
+                        <div class="col-lg-3 mb-3">
+                            <label>Cidade</label>
+                            <input class="form-control" type="text" formControlName="Cidade"
+                                [formControl]="cadastroForm.controls['Cidade']" placeholder="Cidade" />
+                            <span class="text-danger"
+                                *ngIf="cadastroForm.controls['Cidade'].hasError('required') && (cadastroForm.controls['Cidade'].dirty || cadastroForm.controls['Cidade'].touched)">Campo
+                                Obrigatório</span>
+                        </div>
+                        <div class="col-lg-3 mb-3">
+                            <label>Área de Atuação</label>
+                            <select class="form-control form-control-lg" formControlName="Servico"
+                                [formControl]="cadastroForm.controls['Servico']">
+                                <option value='1'>Eletricista</option>
+                                <option value='2'>Frete</option>
+                                <option value='3'>Chaveiro</option>
+                                <option value='4'>Técnico em Informática</option>
+                                <option value='5'>Designer</option>
+                                <option value='6'>Projetista</option>
+                                <option value='7'>Programador</option>
+                            </select>
+                            <span class="text-danger"
+                                *ngIf="cadastroForm.controls['Cidade'].hasError('required') && (cadastroForm.controls['Cidade'].dirty || cadastroForm.controls['Cidade'].touched)">Campo
+                                Obrigatório</span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-lg-3 mb-3">
+                            <label>RG</label>
+                            <input class="form-control" type="text" formControlName="Rg"
+                                [formControl]="cadastroForm.controls['Rg']" placeholder="RG" />
+                            <span class="text-danger"
+                                *ngIf="cadastroForm.controls['Rg'].hasError('required') && (cadastroForm.controls['Rg'].dirty || cadastroForm.controls['Rg'].touched)">Campo
+                                Obrigatório</span>
+                        </div>
+                        <div class="col-lg-3 mb-3">
+                            <label>CPF</label>
+                            <input class="form-control" type="text" formControlName="Cpf"
+                                [formControl]="cadastroForm.controls['Cpf']" placeholder="CPF" />
+                            <span class="text-danger"
+                                *ngIf="cadastroForm.controls['Cpf'].hasError('required') && (cadastroForm.controls['Cpf'].dirty || cadastroForm.controls['Cpf'].touched)">Campo
+                                Obrigatório</span>
+                        </div>
+                        <div class="col-lg-3 mb-3">
+                            <label>Selfie <br><span class="text-danger">somente imgagens(jpeg, png, jpg)</span></label>
+                            <label for="Selfie" class="file-upload">
+                                <button class="btn btn-info">
+                                    <em class="fa fa-upload mr-2"></em>UPLOAD</button>
+                                <input type="file" (change)="onSelfieSelect($event)">
+                            </label>
+                            <span class="text-danger"
+                                *ngIf="cadastroForm.controls['Selfie'].hasError('required') && (cadastroForm.controls['Selfie'].dirty || cadastroForm.controls['Selfie'].touched)">Campo
+                                Obrigatório</span>
+                        </div>
+                        <div class="col-lg-3 mb-3">
+                            <label>Documento com Foto <br><span class="text-danger">somente imgagens(jpeg, png,
+                                    jpg)</span></label>
+                            <label for="Documento" class="file-upload">
+                                <button class="btn btn-info">
+                                    <em class="fa fa-upload mr-2"></em>UPLOAD</button>
+                                <input type="file" (change)="onDocumentoSelect($event)">
+                            </label>
+                            <span class="text-danger"
+                                *ngIf="cadastroForm.controls['Documento'].hasError('required') && (cadastroForm.controls['Documento'].dirty || cadastroForm.controls['Documento'].touched)">Campo
+                                Obrigatório</span>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary" type="submit">Enviar Formulario</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
