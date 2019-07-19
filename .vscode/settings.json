@@ -1,0 +1,5 @@
+{
+    "appService.showBuildDuringDeployPrompt": false,
+    "appService.defaultWebAppToDeploy": "/subscriptions/04768cb4-c659-4946-b8c4-267c27d86ff5/resourceGroups/Servicos-com-Resource-Group/providers/Microsoft.Web/sites/servicos-com",
+    "appService.deploySubpath": "dist"
+}
