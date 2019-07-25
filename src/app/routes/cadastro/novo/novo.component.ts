@@ -25,8 +25,7 @@ export class NovoComponent implements OnInit {
             Telefone: [null, Validators.compose([Validators.required, CustomValidators.number])],
             Email: [null, Validators.compose([Validators.required, CustomValidators.email])],
             Cidade: [null, Validators.compose([Validators.required, Validators.minLength(5)])],
-            Servico: [null, Validators.compose([Validators.required])],
-            Check: [null, Validators.required]
+            Servico: [null, Validators.compose([Validators.required])]
         });
     }
 
