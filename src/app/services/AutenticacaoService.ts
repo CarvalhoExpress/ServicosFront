@@ -13,7 +13,7 @@ const httpOptionsJson = {
 
 export class AutenticacaoService {
 
-    private accessPointUrlProd = 'https://buscadoronline-back.azurewebsites.net/api';
+    private accessPointUrlProd = 'https://servicos-com-backend.azurewebsites.net/api';
     private accessPointUrlLocal = 'https://localhost:5001/api';
 
     constructor(private http: HttpClient) {
@@ -21,13 +21,13 @@ export class AutenticacaoService {
 
     RealizarLogin(data: any): Observable<any> {
         console.log(data);
-        return this.http.post(this.accessPointUrlLocal + '/Account',
+        return this.http.post(this.accessPointUrlProd + '/Account',
             JSON.stringify(data), httpOptionsJson);
     }
 
     RegistrarUsuario(data: any): Observable<any> {
         console.log(data);
-        return this.http.post(this.accessPointUrlLocal + '/Account/Registrar',
+        return this.http.post(this.accessPointUrlProd + '/Account/Registrar',
             JSON.stringify(data), httpOptionsJson);
     }
 
