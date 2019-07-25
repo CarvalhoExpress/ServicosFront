@@ -127,11 +127,10 @@
                         </div>
                         <div class="col-lg-3 mb-3">
                             <label>Selfie <br><span class="text-danger">somente imgagens(jpeg, png, jpg)</span></label>
-                            <label for="Selfie" class="file-upload">
-                                <button class="btn btn-info">
-                                    <em class="fa fa-upload mr-2"></em>UPLOAD</button>
-                                <input type="file" (change)="onSelfieSelect($event)">
+                            <label for="Selfie" class="btn btn-info file-upload">
+                                <em class="fa fa-upload mr-2"></em>UPLOAD
                             </label>
+                            <input class="d-none" id="Selfie" name="Selfie" type="file" (change)="onSelfieSelect($event)" required>
                             <span class="text-danger"
                                 *ngIf="cadastroForm.controls['Selfie'].hasError('required') && (cadastroForm.controls['Selfie'].dirty || cadastroForm.controls['Selfie'].touched)">Campo
                                 Obrigatório</span>
@@ -139,11 +138,10 @@
                         <div class="col-lg-3 mb-3">
                             <label>Documento com Foto <br><span class="text-danger">somente imgagens(jpeg, png,
                                     jpg)</span></label>
-                            <label for="Documento" class="file-upload">
-                                <button class="btn btn-info">
-                                    <em class="fa fa-upload mr-2"></em>UPLOAD</button>
-                                <input type="file" (change)="onDocumentoSelect($event)">
+                            <label for="Documento" class="btn btn-info file-upload">
+                                <em class="fa fa-upload mr-2"></em>UPLOAD
                             </label>
+                            <input id="Documento" name="Documento" class="d-none" type="file" (change)="onDocumentoSelect($event)" required>
                             <span class="text-danger"
                                 *ngIf="cadastroForm.controls['Documento'].hasError('required') && (cadastroForm.controls['Documento'].dirty || cadastroForm.controls['Documento'].touched)">Campo
                                 Obrigatório</span>
