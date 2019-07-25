@@ -15,7 +15,7 @@ export class CadastroService {
 
   private params: HttpParams;
   private accessPointUrlProd = 'https://servicos-com-backend.azurewebsites.net/api';
-  private accessPointUrlLocal = 'https://localhost:5001/api/';
+  private accessPointUrlLocal = 'https://localhost:5001/api';
 
 
   constructor(private http: HttpClient) {
@@ -28,28 +28,28 @@ export class CadastroService {
 
   SolicitarCadastro(product): Observable<any> {
     console.log(product);
-    return this.http.post(this.accessPointUrlProd + 'Cadastro/SolicitarCadastro',
+    return this.http.post(this.accessPointUrlProd + '/Cadastro/SolicitarCadastro',
       JSON.stringify(product), httpOptionsJson);
   }
 
   FinalizarCadastro(cadastro): Observable<any> {
     console.log(cadastro);
-    return this.http.post(this.accessPointUrlProd + 'Cadastro/FinalizarSolicitacao', cadastro);
+    return this.http.post(this.accessPointUrlProd + '/Cadastro/FinalizarSolicitacao', cadastro);
   }
 
   AprovarCadastro(product): Observable<any> {
     console.log(product);
-    return this.http.post(this.accessPointUrlProd + 'Cadastro/AprovarCadastro',
+    return this.http.post(this.accessPointUrlProd + '/Cadastro/AprovarCadastro',
       JSON.stringify(product), httpOptionsJson);
   }
 
   BuscarCadastrosPendentes(): Observable<any> {
-    return this.http.get(this.accessPointUrlProd + 'Cadastro/ListarCadastrosPendentes')
+    return this.http.get(this.accessPointUrlProd + '/Cadastro/ListarCadastrosPendentes')
       .pipe(map(this.extractData));
   }
 
   BuscarCadastro(id): Observable<any> {
-    return this.http.get(this.accessPointUrlProd + 'Cadastro/ObterCadastro', {
+    return this.http.get(this.accessPointUrlProd + '/Cadastro/ObterCadastro', {
       params: {
         Id: id
       }
@@ -57,21 +57,21 @@ export class CadastroService {
   }
 
   VisualizarDocumento(id): string {
-    return this.accessPointUrlProd + 'Cadastro/VisualizarDocumento?Id=' + id;
+    return this.accessPointUrlProd + '/Cadastro/VisualizarDocumento?Id=' + id;
   }
 
   VisualizarSelfie(id): string {
-    return this.accessPointUrlProd + 'Cadastro/VisualizarSelfie?Id=' + id;
+    return this.accessPointUrlProd + '/Cadastro/VisualizarSelfie?Id=' + id;
   }
 
   AdicionarCadastroDoCliente(cliente): Observable<any> {
     console.log(cliente);
-    return this.http.post(this.accessPointUrlProd + 'Cadastro/RealizarCadastro',
+    return this.http.post(this.accessPointUrlProd + '/Cadastro/RealizarCadastro',
       JSON.stringify(cliente), httpOptionsJson);
   }
 
   BuscarClientes(): Observable<any> {
-    return this.http.get(this.accessPointUrlProd + 'Cadastro/BuscarClientes')
+    return this.http.get(this.accessPointUrlProd + '/Cadastro/BuscarClientes')
       .pipe(map(this.extractData));
   }
 

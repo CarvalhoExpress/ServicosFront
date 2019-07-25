@@ -20,8 +20,8 @@ export class SettingsService {
         // App Settings
         // -----------------------------------
         this.app = {
-            name: 'Angle',
-            description: 'Angular Bootstrap Admin Template',
+            name: 'Servios.com',
+            description: 'Carvalho Express',
             year: ((new Date()).getFullYear())
         };
 

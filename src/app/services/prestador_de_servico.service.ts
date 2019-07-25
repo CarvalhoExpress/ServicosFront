@@ -15,7 +15,7 @@ export class PrestadorDeServicoService {
 
   private params: HttpParams;
   private accessPointUrlProd = 'https://servicos-com-backend.azurewebsites.net/api';
-  private accessPointUrlLocal = 'https://localhost:5001/api/';
+  private accessPointUrlLocal = 'https://localhost:5001/api';
 
 
   constructor(private http: HttpClient) {
@@ -27,7 +27,7 @@ export class PrestadorDeServicoService {
   }
 
   BuscarPrestadoresDeServios(busca: string): Observable<any> {
-    return this.http.get(this.accessPointUrlProd + 'PrestadorDeServico/ListarPrestadoresDeServicos', {
+    return this.http.get(this.accessPointUrlProd + '/PrestadorDeServico/ListarPrestadoresDeServicos', {
         params: {
           busca
         }
@@ -35,10 +35,10 @@ export class PrestadorDeServicoService {
   }
 
   VisualizarDocumento(id): string {
-    return this.accessPointUrlProd + 'Cadastro/VisualizarDocumento?Id=' + id;
+    return this.accessPointUrlProd + '/Cadastro/VisualizarDocumento?Id=' + id;
   }
 
   VisualizarSelfie(id): string {
-    return this.accessPointUrlProd + 'Cadastro/VisualizarSelfie?Id=' + id;
+    return this.accessPointUrlProd + '/Cadastro/VisualizarSelfie?Id=' + id;
   }
 }
